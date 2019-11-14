@@ -20,7 +20,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
+  username: postgres
+  password: password
+  
 development:
   <<: *default
   database: online_journal_development
@@ -81,5 +83,7 @@ test:
 production:
   <<: *default
   database: online_journal_production
-  username: online_journal
-  password: <%= ENV['ONLINE_JOURNAL_DATABASE_PASSWORD'] %>
+  
+
+  # username: online_journal
+  # password: <%= ENV['ONLINE_JOURNAL_DATABASE_PASSWORD'] %>

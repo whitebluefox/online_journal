@@ -1,0 +1,13 @@
+<div class="row">
+
+  <div class="col-md-3">
+    <p><b>Title: </b><%= @article.article_title %></p>
+    <p><b>Description: </b><%= @article.article_description %></p>
+    <p><b>Text: </b><%= @article.article_text %></p>
+    <p>
+      <%= link_to 'Edit', edit_article_path(@article) %> |
+      <%= link_to 'Destroy', @article, data: { confirm: 'Are you sure?' }, method: :delete %> |
+      <%= link_to 'Back', articles_path %>
+    </p>
+  </div>
+</div>

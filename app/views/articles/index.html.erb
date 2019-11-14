@@ -1,0 +1,14 @@
+<h1>Listing articles</h1>
+
+<% @articles.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |article| %>
+      <div class="col-md-4">
+        <h4><%= link_to article.article_title, article %></h4>
+        <%= article.article_description %>
+        <%= article.article_text %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
